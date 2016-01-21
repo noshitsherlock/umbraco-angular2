@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     constructor(private _umbracoService: UmbracoService) {}
    
     
-    getNodeByUrl() {                        
+    getNodeByUrl() {                      
         this._umbracoService.getNodeByUrl("/stockholm").subscribe(data => this.objectData = data);               
     }
     
