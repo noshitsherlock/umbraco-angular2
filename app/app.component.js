@@ -1,4 +1,4 @@
-System.register(['angular2/core', './umbraco.service'], function(exports_1) {
+System.register(['angular2/core', './umbraco.service', './app.error'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,7 +8,7 @@ System.register(['angular2/core', './umbraco.service'], function(exports_1) {
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, umbraco_service_1;
+    var core_1, umbraco_service_1, app_error_1;
     var AppComponent;
     return {
         setters:[
@@ -17,6 +17,9 @@ System.register(['angular2/core', './umbraco.service'], function(exports_1) {
             },
             function (umbraco_service_1_1) {
                 umbraco_service_1 = umbraco_service_1_1;
+            },
+            function (app_error_1_1) {
+                app_error_1 = app_error_1_1;
             }],
         execute: function() {
             AppComponent = (function () {
@@ -25,7 +28,8 @@ System.register(['angular2/core', './umbraco.service'], function(exports_1) {
                 }
                 AppComponent.prototype.getNodeByUrl = function () {
                     var _this = this;
-                    this._umbracoService.getNodeByUrl("/stockholm").subscribe(function (data) { return _this.objectData = data; });
+                    this._umbracoService.getNodeByUrl("/stockholm")
+                        .subscribe(function (data) { return _this.objectData = data; }, function (error) { return _this.error = error; });
                 };
                 AppComponent.prototype.ngOnInit = function () {
                     this.getNodeByUrl();
@@ -33,7 +37,8 @@ System.register(['angular2/core', './umbraco.service'], function(exports_1) {
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n        <h1>{{objectData?.Properties}}</h1>                        \n            <ul>\n            <li *ngFor=\"#prop of objectData?.Properties\">\n                <span>Value: {{prop.Value}}</span>\n            </li>\n        </ul>\n                ",
+                        directives: [app_error_1.AppError],
+                        templateUrl: './app/templates/properties.html',
                         providers: [umbraco_service_1.UmbracoService]
                     }), 
                     __metadata('design:paramtypes', [umbraco_service_1.UmbracoService])

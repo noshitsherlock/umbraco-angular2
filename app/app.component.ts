@@ -1,30 +1,27 @@
 import {Component, OnInit} from 'angular2/core';
 import {UmbracoService} from './umbraco.service';
+import {AppError} from './app.error';
 
 @Component({
     selector: 'my-app',
-    template: `
-        <h1>{{objectData?.Properties}}</h1>                        
-            <ul>
-            <li *ngFor="#prop of objectData?.Properties">
-                <span>Value: {{prop.Value}}</span>
-            </li>
-        </ul>
-                `,
+    directives : [AppError],
+    templateUrl: './app/templates/properties.html',
     providers: [UmbracoService]
 })
 
-export class AppComponent implements OnInit {    
-    public objectData : any;
-    
-    constructor(private _umbracoService: UmbracoService) {}
-   
-    
-    getNodeByUrl() {                      
-        this._umbracoService.getNodeByUrl("/stockholm").subscribe(data => this.objectData = data);               
+export class AppComponent implements OnInit {
+    objectData: any;
+    error: any;
+
+    constructor(private _umbracoService: UmbracoService) { }
+
+
+    getNodeByUrl() {
+        this._umbracoService.getNodeByUrl("/stockholm")
+            .subscribe(data => this.objectData = data, error => this.error = error);
     }
-    
-    ngOnInit() {        
+
+    ngOnInit() {
         this.getNodeByUrl();
     }
- }
+}
