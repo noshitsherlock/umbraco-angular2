@@ -1,0 +1,1 @@
+System.register(["angular2/platform/browser","angular2/http","./app.component","rxjs/add/operator/map"],function(t){var n,o,r;return{setters:[function(t){n=t},function(t){o=t},function(t){r=t},function(t){}],execute:function(){n.bootstrap(r.AppComponent,o.HTTP_PROVIDERS)}}});
