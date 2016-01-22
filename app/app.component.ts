@@ -1,5 +1,5 @@
 import {Component, OnInit} from 'angular2/core';
-import {UmbracoService} from './umbraco.service';
+import {UmbracoService} from './services/umbraco.service';
 import {AppError} from './app.error';
 
 @Component({
