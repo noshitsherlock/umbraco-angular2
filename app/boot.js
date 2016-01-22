@@ -1,4 +1,4 @@
-System.register(['angular2/platform/browser', 'angular2/http', './app.component', './app.config', 'rxjs/add/operator/map'], function(exports_1) {
+System.register(['angular2/platform/browser', 'angular2/http', './app.component', './components/app.config', 'rxjs/add/operator/map'], function(exports_1) {
     var browser_1, http_1, app_component_1, app_config_1;
     return {
         setters:[

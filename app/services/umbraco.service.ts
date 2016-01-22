@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core';
 import {Injectable} from 'angular2/core';
 import {Http, Response} from 'angular2/http';
-import {AppConfig} from '../app.config';
+import {AppConfig} from '../components/app.config';
 
 @Component({
     providers : [AppConfig]

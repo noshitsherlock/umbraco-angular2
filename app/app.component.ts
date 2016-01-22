@@ -1,6 +1,6 @@
 import {Component, OnInit} from 'angular2/core';
 import {UmbracoService} from './services/umbraco.service';
-import {AppError} from './app.error';
+import {AppError} from './components/app.error';
 
 @Component({
     selector: 'my-app',
