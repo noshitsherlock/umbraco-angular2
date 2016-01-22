@@ -1,1 +1,0 @@
-{"version":3,"file":"app.error.js","sourceRoot":"","sources":["app.error.ts"],"names":["AppError","AppError.constructor"],"mappings":";;;;;;;;;;;;;;;;;;YAEA;gBAMIA;gBAAeC,CAACA;gBANpBD;oBAACA,gBAASA,CAACA;wBACPA,QAAQA,EAAEA,YAAYA;wBACtBA,QAAQA,EAAEA,uDAAuDA;qBACpEA,CAACA;;6BAIDA;gBAADA,eAACA;YAADA,CAACA,AAPD,IAOC;YAPD,+BAOC,CAAA"}
